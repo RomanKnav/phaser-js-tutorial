@@ -78,14 +78,18 @@ class PreloaderScene extends Phaser.Scene {
 			loadbar_bg.destroy();
 		});
 
+		// Load the assets for the actual game here
+    	this.load.audio('castle_crashers_theme', 'lib/Four_Brave_Champions__FULL.mp3');
+
+        // preload the cat and burger images
+        this.load.image('cat_head', 'lib/cat-head.png');
+    	this.load.image('cheezeburger', 'lib/cheezeburger.png');
+
         /* this event "fires" when all the files have been loaded, but before the 
-            'create' method is called. */
+        'create' method is called. */
 		this.load.on('complete', function () {
 			console.log("everything is loaded!");
 		});
-
-		// Load your assets here
-    	this.load.audio('castle_crashers_theme', 'lib/Four_Brave_Champions__FULL.mp3');
 	}
 
 	create()
@@ -107,7 +111,7 @@ class PreloaderScene extends Phaser.Scene {
 			play_btn.alpha = 0.9;
 		});
     
-    	// start the GameScene when the button is clicked. Bonus - this will enable audo playback as well!
+    	// start the GameScene when the button is clicked. Bonus - this will enable audio playback as well!
 		play_btn.on('pointerup', ()=>{
 			this.scene.start('GameScene');
 		});
