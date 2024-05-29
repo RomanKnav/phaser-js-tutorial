@@ -8,7 +8,7 @@ class InitScene extends Phaser.Scene {
     It's a good place to initialize any data you may need later in the class. */
     init()
     {
-    	console.log('InitScene Started');
+    		console.log('InitScene Started');
     }
 
     /* we call the parent class constructor to pass along a key. This is a string 
@@ -17,24 +17,24 @@ class InitScene extends Phaser.Scene {
     your game will likely crash. */
 	constructor ()
     {
-    	// Sets the string name we can use to access this scene from other scenes
+    		// Sets the string name we can use to access this scene from other scenes
 		super({key:'InitScene'});
     }
 
 	preload()
 	{
 		// This is where you would preload the elements you need to render the preloader scene
-        // I'm guessing the preloader scene is the newgrounds logo? Yes.
-        this.load.image('preloader_background', 'lib/ng-simple-preloader-bg.png');
+	        // I'm guessing the preloader scene is the newgrounds logo? Yes.
+	        this.load.image('preloader_background', 'lib/ng-simple-preloader-bg.png');
 		this.load.image('preloader_button', 'lib/ng-simple-play-btn.png');
-        // filenames given labels for easier use.
+        	// filenames given labels for easier use.
 	}
 
     // this gets called when everything has been loaded and the scene is ready for action
 	create()
 	{
 		console.log('InitScene Created');
-
+	
 		// Once the preload phase is done, we can switch to our preloader scene
 		this.scene.start('PreloaderScene');
 	}
